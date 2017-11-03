@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background: url("back.jpg") no-repeat;
+            background-size: cover;
+            overflow: hidden;
+        }
+        ul{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            margin-left: -100px;
+            list-style: none;
+            transform-origin: 150px 100px;
+            transform-style: preserve-3d;
+            animation: sport 9s linear 0s infinite normal;
+        }
+        div{
+            width: 139px;
+            height: 147px;
+            position: absolute;
+            bottom: 50px;
+            left: 400px;
+            transform-origin: 600px 100px;
+            animation: flying 10s ease-in-out 0s infinite normal;
+        }
+        div img{
+            animation: flyrotate 10s ease-in-out 0s infinite normal;
+        }
+        ul:hover{
+            animation-play-state: paused;
+        }
+        ul:hover li img{
+            opacity: 0.5;
+        }
+        ul li img:hover{
+            opacity: 1;
+        }
+        ul li{
+            width: 300px;
+            height: 200px;
+            background-color: #000;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        ul li img{
+            width: 300px;
+            height: 200px;
+            border:5px solid skyblue;
+            box-sizing: border-box;
+        }
+        ul li:nth-child(1){
+            transform: rotateY(60deg) translateZ(280px);
+        }
+        ul li:nth-child(2){
+            transform: rotateY(120deg) translateZ(280px);
+        }
+        ul li:nth-child(3){
+            transform: rotateY(180deg) translateZ(280px);
+        }
+        ul li:nth-child(4){
+            transform: rotateY(240deg) translateZ(280px);
+        }
+        ul li:nth-child(5){
+            transform: rotateY(300deg) translateZ(280px);
+        }
+        ul li:nth-child(6){
+            transform: rotateY(360deg) translateZ(280px);
+        }
+        @keyframes sport {
+            from{
+                transform: rotateX(-10deg) rotateY(0deg) ;
+            }
+            to{
+                transform: rotateX(-10deg) rotateY(360deg) ;
+            }
+        }
+        @keyframes flying {
+            0%{
+                transform: rotate(0deg) scale(1.5,1.5);
+            }
+            50%{
+                transform: rotate(170deg) scale(1.5,1.5);
+            }
+            100%{
+                transform: rotate(0deg) scale(1.5,1.5);
+            }
+        }
+        @keyframes flyrotate {
+            0%{
+                transform: rotate(0deg);
+                opacity: 1;
+            }
+            25%{
+                opacity: 0;
+            }
+            50%{
+                transform: rotate(-180deg);
+                opacity: 1;
+            }
+            75%{
+                opacity: 0;
+            }
+            100%{
+                transform: rotate(0deg);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><img src="1.png" alt=""></li>
+    <li><img src="2.png" alt=""></li>
+    <li><img src="3.png" alt=""></li>
+    <li><img src="4.png" alt=""></li>
+    <li><img src="5.png" alt=""></li>
+    <li><img src="6.png" alt=""></li>
+</ul>
+<div><img src="fly.png" id="fly"></div>
+<audio src="Linkin Park - Lies Greed Misery.mp3" autoplay="autoplay" ></audio>
+</body>
+</html>

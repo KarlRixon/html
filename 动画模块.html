@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    animation:名称 时长 速度 延迟时间 执行次数 是否往返
+    -->
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box1{
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            animation-name: catoon;
+            animation-duration: 3s;
+            animation-delay: 1s;
+            animation-timing-function: ease-in;
+            animation-iteration-count: 3;
+            animation-direction: alternate;/*是否往返normal*/
+            animation-play-state: running;/*动画是否暂停paused*/
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        @keyframes catoon {
+            /*from{*/
+                /*margin-left: 0;*/
+            /*}*/
+            /*to{*/
+                /*margin-left:600px;*/
+            /*}*/
+            0%{
+            }
+            25%{
+                left: 600px;
+                top: 0;
+            }
+            50%{
+                left: 600px;
+                top: 600px;
+            }
+            75%{
+                left: 0;
+                top: 600px;
+            }
+            100%{
+                left: 0;
+                top: 0;
+            }
+        }
+        .box1:hover{
+            animation-play-state: paused;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            margin:100px auto;
+            animation-name: myrotate;
+            animation-delay: 1s;
+            animation-duration: 3s;
+            animation-fill-mode: both;/*none forwards backwards both*/
+        }
+        @keyframes myrotate {
+            0%{
+                transform:rotate(10deg);
+            }
+            50%{
+                transform:rotate(50deg);
+            }
+            100%{
+                transform:rotate(70deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+</body>
+</html>

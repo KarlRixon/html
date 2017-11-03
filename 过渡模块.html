@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #a{
+            background: green;
+            width: 50px;
+            height: 100px;
+            transition:all 0.5s ease;
+            /*transition-property: width,background-color;*/
+            /*transition-duration: 0.5s,1s;*/
+            /*transition:width 0.5s ease 0s,height 0.4s ease-in-out 0.1s,background 0.5s linear;*/
+        }
+        #a:hover{
+            background: red;
+            width: 100px;
+            height: 200px;
+            }
+        li{
+            margin-top: 30px;
+            list-style: none;
+            background: gray;
+            width: 200px;
+            height: 100px;
+            transition-property:margin-left;
+            transition-duration: 10s;
+        }
+        ul:hover li{
+            margin-left:700px;
+            }
+        ul li:nth-child(1){
+            transition-timing-function: linear;
+        }
+        ul li:nth-child(2){
+            transition-timing-function: ease;
+        }
+        ul li:nth-child(3){
+            transition-timing-function: ease-in;
+        }
+        ul li:nth-child(4){
+            transition-timing-function: ease-out;
+        }
+        ul li:nth-child(5){
+            transition-timing-function: ease-in-out;
+        }
+        #b{
+            width: 1000px;
+            height: 100px;
+            background: goldenrod;
+            text-align: center;
+            line-height: 100px;
+            margin: 0 auto;
+            font-size: 80px;
+        }
+        #b:hover span{
+            margin:0 50px;
+        }
+        #b span{
+            transition-property: all;
+            transition-duration: 1s;
+        }
+    </style>
+</head>
+<body>
+<div id="a"></div>
+<hr>
+<ul>
+    <li>linear</li>
+    <li>ease</li>
+    <li>ease-in</li>
+    <li>ease-out</li>
+    <li id="aa">ease-in-out</li>
+</ul>
+<hr>
+<div id="b">
+    <span>K</span><span>A</span><span>R</span><span>L</span>
+</div>
+</body>
+</html>

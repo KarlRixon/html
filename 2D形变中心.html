@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            margin: 100px auto;
+            position: relative;
+        }
+        ul li{
+            list-style: none;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            transform-origin: 100% 100%;
+        }
+        ul li:nth-child(1){
+            background-color: red;
+            transform: rotate(30deg);
+        }
+        ul li:nth-child(2){
+            background-color: green;
+            transform: rotate(50deg);
+        }
+        ul li:nth-child(3){
+            background-color: blue;
+            transform: rotate(70deg);
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

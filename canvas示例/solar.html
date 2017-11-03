@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<title>太阳系</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+    <body>
+    	<canvas id="canvas" width="1000" height="1000" style="background:black">
+    		您的浏览器不支持canvas
+    	</canvas>
+    	<script>
+    		var canvas=document.getElementById('canvas');
+    		var cxt=canvas.getContext('2d');
+            var time=0;//1:1天
+
+            function drawSolar(){
+                //清除之前内容
+                cxt.clearRect(0,0,1000,1000);
+        		//画轨道
+                cxt.beginPath();
+                cxt.arc(500,500,100,0,360,false);
+                cxt.closePath();
+                cxt.strokeStyle="#fff";
+                cxt.stroke();
+        		//画太阳
+                cxt.beginPath();
+                cxt.arc(500,500,20,0,360,false);
+                cxt.closePath();
+                    //渐变色 线性、镜像渐变
+                var sunColor=cxt.createRadialGradient(500,500,0,500,500,20);//参数：圆心x1 圆心y1 半径1 圆心x2 圆心y2 半径2
+                sunColor.addColorStop(0,"#ff0");    //第一个参数为0-1
+                sunColor.addColorStop(1,"#f90");
+                cxt.fillStyle=sunColor;    
+                cxt.fill();
+        		//画地球
+                cxt.save();
+                cxt.translate(500,500);
+                cxt.rotate(time*(360/365)*Math.PI/180);
+                cxt.beginPath();
+                cxt.arc(0,-100,10,0,360,false);
+                cxt.closePath();
+                var earthColor=cxt.createRadialGradient(0,-100,0,0,-100,10);
+                earthColor.addColorStop(0,"#7881e8");
+                earthColor.addColorStop(1,"#050c12");
+                cxt.fillStyle=earthColor;
+                cxt.fill();
+                cxt.restore();
+
+                time+=1;
+            }
+
+            //使地球动
+            setInterval(drawSolar,10);
+    	</script>
+    </body>
+</html>

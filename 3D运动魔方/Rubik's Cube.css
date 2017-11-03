@@ -1,0 +1,100 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#box .cube {
+    position: absolute;
+    /*这里一定要设置absolute*/
+    height: 306px;
+    width: 306px;
+    text-align: center;
+}
+
+/*包裹魔方的父元素*/
+#view {
+    margin: 0 auto;
+    margin-top: 200px;
+    height: 500px;
+    width: 500px;
+}
+
+/*魔方整体*/
+#box {
+    height: 303px;
+    width: 303px;
+    position: relative;
+    margin: 0 auto;
+    /*-webkit-perspective: 1000;
+    -webkit-perspective-origin: -200px -200px;这里注释掉那么就能每面都是正方形展现了*/
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform-origin: 100px 100px 0;
+    -webkit-animation: cube ease 5s infinite alternate;
+}
+
+/*魔方的每个面*/
+.cube div {
+    float: left;
+    border: 0.5px solid #000;
+    width: 100px;
+    height: 100px;
+}/*这里其实就是派生选择器的应用*/
+
+/*不同面分别设置颜色和旋转及平移角度*/
+#box .one {
+    background-color: white;
+    -webkit-transform: translateZ(450px);
+}
+
+#box .two {
+    background-color: orange;
+    -webkit-transform: translateZ(300px) translateY(150px)rotateX(-90deg);
+}
+
+#box .three {
+    background-color: blue;
+    -webkit-transform: translateZ(300px) translateY(-150px) rotateX(90deg);
+}
+
+#box .four {
+    background-color: red;
+    -webkit-transform: translateZ(150px) rotateY(180deg) rotateZ(180deg);
+}
+
+#box .five {
+    background-color: green;
+    -webkit-transform: translateZ(300px) translateX(-150px) rotateY(-90deg) rotateZ(180deg);
+}
+
+#box .six {
+    background-color: yellow;
+    -webkit-transform: translateZ(300px) translateX(150px) rotateY(90deg);
+}
+
+/*魔方整体的动画效果*/
+@-webkit-keyframes cube {
+    0% {
+        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        -webkit-transform-origin: center center;
+    }
+    25% {
+        -webkit-transform: rotateX(90deg) rotateY(90deg) rotateZ(90deg);
+        -webkit-transform-origin: center center;
+    }
+    50% {
+        -webkit-transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+        -webkit-transform-origin: center center;
+    }
+    75% {
+        -webkit-transform: rotateX(-90deg) rotateX(90deg) rotateY(-90deg);
+        -webkit-transform-origin: center center;
+    }
+    85% {
+        -webkit-transform: rotateX(-90deg) rotateX(180deg) rotateY(-180deg);
+        -webkit-transform-origin: center center;
+    }
+    100% {
+        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        -webkit-transform-origin: center center;
+    }
+}

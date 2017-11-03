@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            height: 400px;
+            background-color: skyblue;
+            margin-top:200px;
+            animation: change 5s linear 0s infinite alternate;
+            position: relative;
+            overflow: hidden;
+        }
+        ul li{
+            width: 400%;
+            height: 100%;
+            /*background-color: red;*/
+            position: absolute;
+            left: 0;
+            top: 0;
+            list-style: none;
+        }
+        ul li:nth-child(1){
+            margin-top:75px;
+            /*margin-left: 0;*/
+            background-image: url("27255868_9.png");
+            animation: one 30s linear 0s infinite alternate;
+        }
+        /*ul li:nth-child(2){*/
+            /*!*margin-left: 25px;*!*/
+            /*background-image: url("27255868_10.png");*/
+            /*animation: two 30s linear 0s infinite alternate;*/
+        /*}*/
+        ul li:nth-child(3){
+            /*margin-left: 50px;*/
+            background-image: url("27255868_11.png");
+            animation: three 30s linear 0s infinite alternate;
+        }
+        /*ul li:nth-child(4){*/
+            /*margin-top: 20px;*/
+            /*!*margin-left: 75px;*!*/
+            /*background-image: url("27255868_12.png");*/
+            /*animation: four 30s linear 0s infinite alternate;*/
+        /*}*/
+        ul li:nth-child(5){
+            background-image: url("27255868_13.png");
+            animation: five 30s linear 0s infinite alternate;
+        }
+        /*ul li:nth-child(6){*/
+            /*background-image: url("27255868_14.png");*/
+            /*animation: six 30s linear 0s infinite alternate;*/
+        /*}*/
+        ul li:nth-child(7){
+            background-image: url("27255868_15.png");
+            animation: seven 30s linear 0s infinite alternate;
+        }
+        ul li:nth-child(8){
+            background-image: url("7fd915b481de03c1c48e417c3e9a1950.png");
+            animation: eight 30s linear 0s infinite alternate;
+        }
+        @keyframes change {
+            form{
+                background-color: skyblue;
+            }
+            to{
+                background-color: black;
+            }
+        }
+        @keyframes one {
+            from{
+                margin-left:0;
+            }
+            to{
+                margin-left: -100%;
+            }
+        }
+        /*@keyframes two {*/
+            /*from{*/
+                /*margin-left:25px;*/
+            /*}*/
+            /*to{*/
+                /*margin-left: -125%;*/
+            /*}*/
+        /*}*/
+        @keyframes three {
+            from{
+                margin-left:50px;
+            }
+            to{
+                margin-left: -150%;
+            }
+        }
+        /*@keyframes four {*/
+            /*from{*/
+                /*margin-left:75px;*/
+            /*}*/
+            /*to{*/
+                /*margin-left: -175%;*/
+            /*}*/
+        /*}*/
+        @keyframes five {
+            from{
+                margin-left:100px;
+            }
+            to{
+                margin-left: -200%;
+            }
+        }
+        /*@keyframes six {*/
+            /*from{*/
+                /*margin-left:125px;*/
+            /*}*/
+            /*to{*/
+                /*margin-left: -225%;*/
+            /*}*/
+        /*}*/
+        @keyframes seven {
+            from{
+                margin-left:150px;
+            }
+            to{
+                margin-left: -250%;
+            }
+        }
+        @keyframes eight {
+            from{
+                margin-left:175px;
+            }
+            to{
+                margin-left: -275%;
+            }
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

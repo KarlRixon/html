@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border: 1px solid black;
+            margin:100px auto;
+            perspective: 600px;
+            transform: rotateY(0deg);
+            transform-style: preserve-3d;/*flat二维*/
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border: 1px solid black;
+            margin:50px auto;
+            transform: rotateY(45deg);
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+</body>
+</html>

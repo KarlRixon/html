@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    先旋转，再translateZ，就不会倒着显示
+    -->
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            perspective: 500px;
+        }
+        ul{
+            width: 200px;
+            height: 200px;
+            /*border: 1px solid black;*/
+            /*box-sizing: border-box;*/
+            margin: 100px auto;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+            animation: sport 10s ease 0s infinite normal;
+        }
+        li{
+            width: 200px;
+            height: 200px;
+            list-style: none;
+            font-size: 60px;
+            text-align: center;
+            line-height: 200px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        ul:hover{
+            animation-play-state: paused;
+        }
+        ul li:nth-child(1){
+            background-color: red;
+            transform: rotate(0deg) translateZ(100px)
+            scale(2, 1);
+        }
+        ul li:nth-child(2){
+            background-color: yellow;
+            transform: rotateX(180deg) translateZ(100px)
+            scale(2, 1);
+        }
+        ul li:nth-child(3){
+            background-color: green;
+            transform: rotateX(90deg) translateZ(100px)
+            scale(2, 1);
+        }
+        ul li:nth-child(4){
+            background-color: blue;
+            transform: rotateX(-90deg) translateZ(100px)
+            scale(2, 1);
+        }
+        ul li:nth-child(5){
+            background-color: gray;
+            transform: rotateY(-90deg) translateZ(200px);
+        }
+        ul li:nth-child(6){
+            background-color: orange;
+            transform: rotateY(90deg) translateZ(200px);
+        }
+        img{
+            width: 200px;
+            height: 200px;
+        }
+        @keyframes sport {
+            0%{
+                transform: rotateX(0deg);
+            }
+            8.33%{
+                transform: rotateX(90deg);
+            }
+            25%{
+                transform: rotateX(90deg);
+            }
+            33.33%{
+                transform: rotateX(180deg);
+            }
+            50%{
+                transform: rotateX(180deg);
+            }
+            58.33%{
+                transform: rotateX(270deg);
+            }
+            74.97%{
+                transform: rotateX(270deg);
+            }
+            83.3%{
+                transform: rotateX(360deg);
+            }
+            100%{
+                transform: rotateX(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><img src="1.png" alt=""></li>
+    <li><img src="2.png" alt=""></li>
+    <li><img src="3.png" alt=""></li>
+    <li><img src="4.png" alt=""></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            width: 200px;
+            height: 200px;
+            /*border: 1px solid black;*/
+            box-sizing: border-box;
+            margin: 100px auto;
+            position: relative;
+            transform-style: preserve-3d;
+            /*perspective: 700px;*/
+            transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+        }
+        li{
+            width: 200px;
+            height: 200px;
+            list-style: none;
+            font-size: 60px;
+            text-align: center;
+            line-height: 200px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        ul li:nth-child(1){
+            background-color: red;
+            transform: translateX(-100px) rotateY(-90deg);
+        }
+        ul li:nth-child(2){
+            background-color: yellow;
+            transform: translateX(100px) rotateY(90deg);
+        }
+        ul li:nth-child(3){
+            background-color: green;
+            transform: translateY(100px) rotateX(-90deg);
+        }
+        ul li:nth-child(4){
+            background-color: blue;
+            transform: translateY(-100px) rotateX(90deg);
+        }
+        ul li:nth-child(5){
+            background-color: gray;
+            transform: translateZ(-100px) rotateX(180deg);
+        }
+        ul li:nth-child(6){
+            background-color: orange;
+            transform: translateZ(100px);
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+</ul>
+</body>
+</html>

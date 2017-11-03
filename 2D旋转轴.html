@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            width: 800px;
+            height: 100px;
+            margin: 0 auto;
+            perspective: 900px; /*透视属性必须放在元素上级*/
+        }
+        ul li{
+            list-style: none;
+            width: 200px;
+            height: 300px;
+            margin: 0 auto ;
+            margin-top: 50px;
+            border: 1px solid black;
+        }
+        li img{
+            width: 200px;
+            height: 300px;
+        }
+        li:nth-child(1) img{
+            transform: rotateZ(45deg);
+        }
+        li:nth-child(2) img{
+            transform: rotateX(45deg);
+        }
+        li:nth-child(3) img{
+            transform: rotateY(45deg);
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><img src="1.jpg" alt=""></li>
+    <li><img src="1.jpg" alt=""></li>
+    <li><img src="1.jpg" alt=""></li>
+</ul>
+</body>
+</html>

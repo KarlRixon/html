@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            overflow: hidden;
+            width: 600px;
+            height: 200px;
+            border: 1px;
+            margin: 100px auto;
+        }
+        ul{
+            width: 2000px;
+            height: 200px;
+            background-color: black;
+            animation: move 10s linear 0s infinite normal;
+        }
+        ul li{
+            float: left;
+            list-style: none;
+            width: 300px;
+            height: 200px;
+            background-color: blue;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+        li>img{
+            width: 300px;
+            height: 200px;
+        }
+        @keyframes move {
+            from{
+                margin-left: 0;
+            }
+            to{
+                margin-left: -1200px;
+            }
+        }
+        ul:hover{
+            animation-play-state: paused;
+        }
+        ul:hover li{
+            opacity: 0.7;
+        }
+        ul li:hover{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul>
+        <li><img src="1.png" alt=""></li>
+        <li><img src="2.png" alt=""></li>
+        <li><img src="3.png" alt=""></li>
+        <li><img src="4.png" alt=""></li>
+        <li><img src="1.png" alt=""></li>
+        <li><img src="2.png" alt=""></li>
+    </ul>
+</div>
+</body>
+</html>

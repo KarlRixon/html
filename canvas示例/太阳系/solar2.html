@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<head><title>太阳系</title></head>
+	<body>
+		<canvas id="canvas" width="1000" height="1000" style="background:#000">
+			您的浏览器不支持canvas
+		</canvas>
+		<script>
+			var cxt=document.getElementById('canvas').getContext('2d');
+			//轨道
+			function drawTrack(){
+				for(var i=0;i<8;i++){
+					cxt.beginPath();
+					cxt.arc(500,500,(i+1)*50,0,360,false);
+					cxt.closePath();
+					cxt.strokeStyle="#fff";
+					cxt.stroke();
+				}
+			}
+			function drawPlanet(x,y,radius,cycle,scolor,ecolor){	//坐标点、半径、颜色、公转周期
+				this.x=x;
+				this.y=y;
+				this.radius=radius;
+				this.cycle=cycle;
+				this.scolor=scolor;
+				this.ecolor=ecolor;
+				this.color=null;
+				this.time=0;	//时间计数器
+				this.draw=function(){
+					cxt.save();
+					cxt.translate(500,500);
+					cxt.rotate((this.time*360/this.cycle)*Math.PI/180);
+					//画星球
+					cxt.beginPath();
+					cxt.arc(this.x,this.y,this.radius,0,360,false);
+					cxt.closePath();
+					this.color=cxt.createRadialGradient(this.x,this.y,0,this.x,this.y,this.radius);
+					this.color.addColorStop(0,this.scolor);
+					this.color.addColorStop(1,this.ecolor);
+					cxt.fillStyle=this.color;
+					cxt.fill();
+					cxt.restore();
+
+					this.time+=1;
+				}
+			}
+			//绘制轨道
+			drawTrack();
+			//创建太阳对象
+			function Sun(){
+				drawPlanet.call(this,0,0,20,0,"#ff0","#f90");
+			}
+			var sun=new Sun();
+
+			//创建各行星
+			function Mercury(){
+				drawPlanet.call(this,0,-50,8,87.70,"#a69697","#5c3e40");
+			}
+			var mercury=new Mercury();
+
+			function Venus(){
+				drawPlanet.call(this,0,-100,10,224.701,"#c4bbac","#1f1315");
+			}
+			var venus=new Venus();
+
+			function Earth(){
+				drawPlanet.call(this,0,-150,10,365.2422,"#78b1e8","#050c12");
+			}
+			var earth=new Earth();
+
+			function Mars(){
+				drawPlanet.call(this,0,-200,8,686.98,"#cec9b6","#76422d");
+			}
+			var mars=new Mars();
+			
+			function Jupiter(){
+				drawPlanet.call(this,0,-250,13,4332.589,"#c0a48e","#322222");
+			}
+			var jupiter=new Jupiter();
+			
+			function Saturn(){
+				drawPlanet.call(this,0,-300,15,10759.5,"#f7f9e3","#5c4533");
+			}
+			var saturn=new Saturn();
+
+			function Uranus(){
+				drawPlanet.call(this,0,-350,11,30799.095,"#a7e1e5","#19243a");
+			}
+			var uranus=new Uranus();
+
+			function Neptune(){
+				drawPlanet.call(this,0,-400,10,164.8*365,"#0661b2","#1e3b73");
+			}
+			var neptune=new Neptune();
+
+			function move(){
+				cxt.clearRect(0,0,1000,1000);
+				drawTrack();
+				sun.draw();
+				mercury.draw();
+				venus.draw();
+				earth.draw();
+				mars.draw();
+				jupiter.draw();
+				saturn.draw();
+				uranus.draw();
+				neptune.draw();
+			}
+
+			setInterval(move,10);
+		</script>
+	</body>
+</html>
